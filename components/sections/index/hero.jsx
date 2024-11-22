@@ -33,16 +33,17 @@ export default function Hero() {
 	return (
 		<Section classProp={`${hero.section}`}>
 			<Container spacing={'VerticalXXXL'}>
+				<br></br>
 				<TypeAnimation className={`${hero.preHeader}`}
 					sequence={[
 						content.intro.startDelay,
-						() => { setTypingStatus('typing') },
+						() => { setTypingStatus('typing'); },
 						content.intro.start,
-						() => {	setTypingStatus('typed') },
+						() => { setTypingStatus('typed'); },
 						content.intro.deleteDelay,
-						() => {	setTypingStatus('deleting') },
+						() => { setTypingStatus('deleting'); },
 						content.intro.end,
-						() => {	setTypingStatus('deleted') },
+						() => { setTypingStatus('deleted'); },
 						content.intro.restartDelay,
 					]}
 					speed={content.intro.speed}
@@ -53,24 +54,24 @@ export default function Hero() {
 				<section>
 					<h1 className={hero.header}>
 						{content.header.name}
-						</h1>
+					</h1>
 					<h1 className={`${hero.header} ${hero.primaryDim}`}>
 						{content.header.usp}
 					</h1>
 				</section>
 				<section>
 					<p className={`${hero.primaryBright} subtitle ${space(["verticalLrg"])}`}>
-						{ content.paragraph }
-					</p>					
+						{content.paragraph}
+					</p>
 				</section>
 				<section>
-					<button	className={`button ${button.primary}`}
-							onClick={ () => window.location = 'mailto:hello@andrewnelson.net' } >
-						{content.buttons.primary.title}
-					</button>
-					<button className={`button ${button.secondary} leaveSite`}
-							onClick={ ()=> window.open("https://www.linkedin.com/in/--andrewnelson/", "_blank") } >
+					<button className={`button ${button.secondary}`}
+					onClick={() => window.location = 'mailto:contact@ismaillagouilly.com'}>
 						{content.buttons.secondary.title}
+					</button>
+					<button className={`button ${button.primary} leaveSite`}
+					onClick={() => window.open("https://www.linkedin.com/in/ismail-lagouilly/", "_blank")}>
+						{content.buttons.primary.title}
 					</button>
 				</section>
 			</Container>
